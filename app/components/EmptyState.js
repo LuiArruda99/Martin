@@ -10,7 +10,7 @@ export default function EmptyState({ setOpen, setPrompt }) {
         >
           Personalizar{" "}
         </button>{" "}
-        e sinta a mágica.
+        e sinta a mágica acontecer.
       </p>
       <p>
         Eu posso{" "}
