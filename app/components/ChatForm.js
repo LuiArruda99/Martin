@@ -76,7 +76,7 @@ const ChatForm = ({ prompt, setPrompt, onSubmit, handleFileUpload }) => {
             autoFocus
             name="prompt"
             className="flex-grow block w-full rounded-l-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:leading-6"
-            placeholder="Send a message"
+            placeholder="Como posso te ajudar hoje?"
             required={true}
             value={prompt}
             rows={1}
@@ -91,7 +91,7 @@ const ChatForm = ({ prompt, setPrompt, onSubmit, handleFileUpload }) => {
             className="bg-gray-600 hover:bg-gray-800 items-center font-semibold text-white rounded-r-md px-5 py-3"
             type="submit"
           >
-            Chat
+            Enviar
           </button>
         </form>
       </div>

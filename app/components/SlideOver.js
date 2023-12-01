@@ -48,7 +48,7 @@ export default function SlideOver({
                       <div className="bg-gray-700 px-4 py-6 sm:px-6">
                         <div className="flex items-center justify-between">
                           <Dialog.Title className="text-base font-semibold leading-6 text-white">
-                            🦙 Chat with a Llama
+                          🤖 Converse com Martin
                           </Dialog.Title>
                           <div className="ml-3 flex h-7 items-center">
                             <button
@@ -66,7 +66,7 @@ export default function SlideOver({
                         </div>
                         <div className="mt-1">
                           <p className="text-sm text-gray-300">
-                            A project from Replicate.
+                            Powered by BMTech.
                           </p>
                         </div>
                       </div>
@@ -78,14 +78,14 @@ export default function SlideOver({
                                 htmlFor="description"
                                 className="block font-bold text-sm leading-6 text-gray-900"
                               >
-                                Llama Size
+                                Parâmetros do modelo
                               </label>
 
                               <p
                                 id="system-prompt-description"
                                 className="mt-2 text-xs text-gray-500"
                               >
-                                Larger size means smarter, but slower.
+                                Tamanho maior significa mais inteligente, porém mais lento.
                               </p>
                               <div className="">
                                 <Listbox value={size} onChange={setSize}>
@@ -160,14 +160,14 @@ export default function SlideOver({
                                 htmlFor="description"
                                 className="block font-bold text-sm leading-6 text-gray-900"
                               >
-                                System Prompt
+                                Comportamento esperado
                               </label>
                               <p
                                 id="system-prompt-description"
                                 className="mt-2 text-xs text-gray-500"
                               >
-                                This is prepended to the prompt and helps guide
-                                system behavior.
+                                Descreva em sentenças simples as características e persolidade esperadas para ajudar a orientar
+                                 comportamento do modelo.
                               </p>
                               <div className="mt-3">
                                 <textarea
@@ -189,15 +189,14 @@ export default function SlideOver({
                                 htmlFor="temperature"
                                 className="block text-sm font-bold leading-6 text-gray-900"
                               >
-                                Temperature - {temp}
+                                Temperatura - {temp}
                               </label>
                               <p
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                Adjusts randomness of outputs, greater than 1 is
-                                random and 0 is deterministic, 0.75 is a good
-                                starting value.
+                                Ajusta a aleatoriedade das respostas, Quanto mais próximo de 1 mais criativa, inusitada e menos acurada e 0 é determinístico e completamente factual, 0,75 é um bom
+                                 valor para começar a interagir.
                               </p>
                               <div className="mt-3">
                                 <input
@@ -226,8 +225,8 @@ export default function SlideOver({
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                Maximum number of tokens to generate. A word is
-                                generally 2-3 tokens.
+                                Número máximo de tokens a serem gerados. Uma palavra,
+                                 geralmente, possui entre 2-3 tokens.
                               </p>
                               <div className="mt-3">
                                 <input
@@ -256,9 +255,9 @@ export default function SlideOver({
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                When decoding text, samples from the top p
-                                percentage of most likely tokens; lower to
-                                ignore less likely tokens.
+                                Ao decodificar texto, valores de p altos (próximos de 1) força o modelo a considerar maior
+                                 porcentagem de tokens mais prováveis; Quanto menor,
+                                 tende a ignorar com maior frequência tokens menos prováveis.
                               </p>
                               <div className="mt-3">
                                 <input

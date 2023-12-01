@@ -15,27 +15,27 @@ function approximateTokenCount(text) {
 
 const VERSIONS = [
   {
-    name: "Llama 2 7B",
+    name: "Martin 7B",
     version: "13c3cdee13ee059ab779f0291d29054dab00a47dad8261375654de5540165fb0",
     shortened: "7B",
   },
   {
-    name: "Llama 2 13B",
+    name: "Martin 13B",
     version: "f4e2de70d66816a838a89eeeb621910adffb0dd0baba3976c96980970978018d",
     shortened: "13B",
   },
   {
-    name: "Llama 2 70B",
+    name: "Martin 70B",
     version: "02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3",
     shortened: "70B",
   },
   {
-    name: "Llava 13B",
+    name: "Martin Llava 13B",
     version: "2facb4a474a0462c15041b78b1ad70952ea46b5ec6ad29583c0b29dbd4249591",
     shortened: "Llava",
   },
   {
-    name: "Salmonn",
+    name: "Martin Salmonn",
     version: "ad1d3f9d2bd683628242b68d890bef7f7bd97f738a7c2ccbf1743a594c723d83",
     shortened: "Salmonn",
   },
@@ -83,9 +83,9 @@ export default function HomePage() {
   const [error, setError] = useState(null);
 
   //   Llama params
-  const [size, setSize] = useState(VERSIONS[2]); // default to 70B
+  const [size, setSize] = useState(VERSIONS[1]); // default to 70B
   const [systemPrompt, setSystemPrompt] = useState(
-    "You are a helpful assistant."
+    "You are a helpful assistant and always respond in Brazilian Portuguese."
   );
   const [temp, setTemp] = useState(0.75);
   const [topP, setTopP] = useState(0.9);
@@ -125,17 +125,17 @@ export default function HomePage() {
         setAudio(file.fileUrl);
         setSize(VERSIONS[4]);
         toast.success(
-          "You uploaded an audio file, so you're now speaking with Salmonn."
+          "Você enviou um arquivo de áudio e agora está falando com o submodelo Salmonn."
         );
       } else if (["image/jpeg", "image/png"].includes(file.originalFile.mime)) {
         setImage(file.fileUrl);
         setSize(VERSIONS[3]);
         toast.success(
-          "You uploaded an image, so you're now speaking with Llava."
+          "Você enviou uma imagem e agora está falando com o submodelo Llava."
         );
       } else {
         toast.error(
-          `Sorry, we don't support that file type (${file.originalFile.mime}) yet. Feel free to push a PR to add support for it!`
+          `Perdão, eu não aprendi a lidar com a extensão (${file.originalFile.mime}) ainda :(`
         );
       }
     }
@@ -180,7 +180,7 @@ export default function HomePage() {
     while (approximateTokenCount(prompt) > MAX_TOKENS) {
       if (messageHistory.length < 3) {
         setError(
-          "Your message is too long. Please try again with a shorter message."
+          "Sua mensagem é muito longa. Por favor, tente novamente com uma mensagem mais curta."
         );
 
         return;
@@ -201,7 +201,7 @@ export default function HomePage() {
   useEffect(() => {
     if (!localStorage.getItem("toastShown")) {
       toast.success(
-        "We just updated our 7B model — it's super fast. Try it out!"
+        "Acabamos de atualizar nosso modelo 7B – é super rápido. Experimente!"
       );
       localStorage.setItem("toastShown", "true");
     }
@@ -215,9 +215,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="bg-slate-100 border-b-2 text-center p-3">
-        Powered by Replicate. <CTA shortenedModelName={size.shortened} />
-      </div>
+     
       <nav className="grid grid-cols-2 pt-3 pl-6 pr-3 sm:grid-cols-3 sm:pl-0">
         <div className="hidden sm:inline-block"></div>
         <div className="font-semibold text-gray-500 sm:text-center">
@@ -225,28 +223,19 @@ export default function HomePage() {
             ? "🌋"
             : size.shortened == "Salmonn"
             ? "🐟"
-            : "🦙"}{" "}
-          <span className="hidden sm:inline-block">Chat with</span>{" "}
+            : "🤖"}{" "}
+          <span className="hidden sm:inline-block">Converse com</span>{" "}
           <button
             className="py-2 font-semibold text-gray-500 hover:underline"
             onClick={() => setOpen(true)}
           >
             {size.shortened == "Llava" || size.shortened == "Salmonn"
               ? size.shortened
-              : "Llama 2 " + size.shortened}
+              : "Martin " + size.shortened}
           </button>
         </div>
         <div className="flex justify-end">
-          <a
-            className="inline-flex items-center px-3 py-2 mr-3 text-sm font-semibold text-gray-700 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            href="https://github.com/replicate/chat"
-          >
-            <CodeBracketIcon
-              className="w-5 h-5 text-gray-500 sm:mr-2 group-hover:text-gray-900"
-              aria-hidden="true"
-            />{" "}
-            <span className="hidden sm:inline">Clone on GitHub</span>
-          </a>
+          
           <button
             type="button"
             className="inline-flex items-center px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
@@ -256,7 +245,7 @@ export default function HomePage() {
               className="w-5 h-5 text-gray-500 sm:mr-2 group-hover:text-gray-900"
               aria-hidden="true"
             />{" "}
-            <span className="hidden sm:inline">Settings</span>
+            <span className="hidden sm:inline">Personalizar</span>
           </button>
         </div>
       </nav>

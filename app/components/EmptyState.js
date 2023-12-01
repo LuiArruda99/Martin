@@ -3,71 +3,71 @@ export default function EmptyState({ setOpen, setPrompt }) {
     <div className="mt-12 sm:mt-24 space-y-6 text-gray-400 text-base mx-8 sm:mx-4 sm:text-2xl leading-12">
       <p>
         {" "}
-        Customize Llama&apos;s personality by clicking the{" "}
+        Customize a personalidade do Martin clicando em{" "}
         <button
           className="prompt-button inline-flex items-center "
           onClick={() => setOpen(true)}
         >
-          settings{" "}
+          Personalizar{" "}
         </button>{" "}
-        button.
+        e sinta a mágica.
       </p>
       <p>
-        I can{" "}
+        Eu posso{" "}
         <button
           className="prompt-button"
           onClick={() =>
             setPrompt(
-              "Explain the self-attention mechanism that Transformers use like I'm five."
+              "Explique o mecanismo de autoatenção que os Transformers usam como se eu tivesse cinco anos."
             )
           }
         >
-          explain concepts
+          explicar conceitos
         </button>
-        , write{" "}
+        , escrever{" "}
         <button
           className="prompt-button"
           onClick={() =>
-            setPrompt("Write a poem about open source machine learning. ")
+            setPrompt("Escreva um poema sobre aprendizado de máquina de código aberto. ")
           }
         >
-          poems
+          poemas
         </button>{" "}
-        and{" "}
+        e{" "}
         <button
           className="prompt-button"
           onClick={() =>
             setPrompt(
-              "Write a python script that trains `bert-large` on the `IMDB` dataset using the Transformers `Trainer` class and Datasets library. I have access to four GPUs, so let's use DDP. Please write the script and then tell me how to launch it on the command line."
+              "Escreva um script python que treine `bert-large` no conjunto de dados `IMDB` usando a classe Transformers `Trainer` e a biblioteca Datasets. Tenho acesso a quatro GPUs, então vamos usar DDP. Por favor, escreva o script e diga-me como iniciá-lo na linha de comando."
             )
           }
         >
-          code
+          código de programação
         </button>
         ,{" "}
         <button
           className="prompt-button"
           onClick={() =>
             setPrompt(
-              "Respond to this question only based on the information provided here. Cats like dogs, and dogs like rabbits. Cats like anything that dogs like. I really really dislike rabbits. How do cats feel about rabbits?"
+              "Responda a esta pergunta apenas com base nas informações fornecidas aqui. Gatos gostam de cachorros e cachorros gostam de coelhos. Os gatos gostam de tudo que os cães gostam. Eu realmente não gosto de coelhos. Como os gatos se sentem em relação aos coelhos?"
             )
           }
         >
-          solve logic puzzles
+          resolver quebra-cabeças
         </button>
-        , or even{" "}
+        , ou até ajudar{" "}
         <button
           className="prompt-button"
           onClick={() =>
             setPrompt(
-              "please provide 10 fun names for a pet pelican. Please come up with unique emojis to go along with each name. Try not to repeat the same emojis. Make them fun, colorful, and loving names"
+              "forneça 10 nomes divertidos para um pelicano de estimação. Por favor, crie emojis exclusivos para acompanhar cada nome. Tente não repetir os mesmos emojis. Faça-lhes nomes divertidos, coloridos e amorosos"
             )
           }
         >
-          name your pets.
+          a dar nome aos seus pets.
         </button>{" "}
       </p>
-      <p>Send me a message, or upload an image or audio file.</p>
+      <p>Envie-me uma mensagem ou carregue uma imagem ou arquivo de áudio.</p>
     </div>
   );
 }
