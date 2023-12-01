@@ -67,7 +67,7 @@ export default function EmptyState({ setOpen, setPrompt }) {
           a dar nome aos seus pets.
         </button>{" "}
       </p>
-      <p>Envie-me uma mensagem ou carregue uma imagem ou arquivo de áudio.</p>
+      <p>Envie-me uma mensagem, carregue uma imagem ou arquivo de áudio.</p>
     </div>
   );
 }
