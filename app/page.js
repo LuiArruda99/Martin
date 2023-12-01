@@ -85,7 +85,7 @@ export default function HomePage() {
   //   Llama params
   const [size, setSize] = useState(VERSIONS[1]); // default to 70B
   const [systemPrompt, setSystemPrompt] = useState(
-    "You are a helpful assistant and always respond in Brazilian Portuguese."
+    "You are a helpful assistant and always respond in Brazilian Portuguese. don't mention it, just pretend."
   );
   const [temp, setTemp] = useState(0.75);
   const [topP, setTopP] = useState(0.9);
