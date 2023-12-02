@@ -30,36 +30,36 @@ const VERSIONS = [
     shortened: "70B",
   },
   {
-    name: "Martin Llava 13B",
+    name: "Martin Lens 13B",
     version: "2facb4a474a0462c15041b78b1ad70952ea46b5ec6ad29583c0b29dbd4249591",
-    shortened: "Llava",
+    shortened: "Lens",
   },
   {
-    name: "Martin Salmonn",
+    name: "Martin Voice",
     version: "ad1d3f9d2bd683628242b68d890bef7f7bd97f738a7c2ccbf1743a594c723d83",
-    shortened: "Salmonn",
+    shortened: "Voice",
   },
 ];
 
 function CTA({ shortenedModelName }) {
-  if (shortenedModelName == "Llava") {
+  if (shortenedModelName == "Lens") {
     return (
       <a
         href="https://replicate.com/blog/run-llama-2-with-an-api?utm_source=project&utm_campaign=llama2ai"
         target="_blank"
         className="underline"
       >
-        Run and fine-tune Llava in the cloud.
+        Run and fine-tune Lens in the cloud.
       </a>
     );
-  } else if (shortenedModelName == "Salmonn") {
+  } else if (shortenedModelName == "Voice") {
     return (
       <a
         href="https://replicate.com/blog/run-llama-2-with-an-api?utm_source=project&utm_campaign=llama2ai"
         target="_blank"
         className="underline"
       >
-        Run and fine-tune Salmonn in the cloud.
+        Run and fine-tune Voice in the cloud.
       </a>
     );
   } else {
@@ -91,10 +91,10 @@ export default function HomePage() {
   const [topP, setTopP] = useState(0.9);
   const [maxTokens, setMaxTokens] = useState(800);
 
-  //  Llava params
+  //  Lens params
   const [image, setImage] = useState(null);
 
-  // Salmonn params
+  // Voice params
   const [audio, setAudio] = useState(null);
 
   const { complete, completion, setInput, input } = useCompletion({
@@ -125,13 +125,13 @@ export default function HomePage() {
         setAudio(file.fileUrl);
         setSize(VERSIONS[4]);
         toast.success(
-          "Você enviou um arquivo de áudio e agora está falando com o submodelo Salmonn."
+          "Você enviou um arquivo de áudio e agora está falando com o submodelo Voice."
         );
       } else if (["image/jpeg", "image/png"].includes(file.originalFile.mime)) {
         setImage(file.fileUrl);
         setSize(VERSIONS[3]);
         toast.success(
-          "Você enviou uma imagem e agora está falando com o submodelo Llava."
+          "Você enviou uma imagem e agora está falando com o submodelo Lens."
         );
       } else {
         toast.error(
@@ -219,17 +219,17 @@ export default function HomePage() {
       <nav className="grid grid-cols-2 pt-3 pl-6 pr-3 sm:grid-cols-3 sm:pl-0">
         <div className="hidden sm:inline-block"></div>
         <div className="font-semibold text-gray-500 lg:text-center">
-          {size.shortened == "Llava"
-            ? "🌋"
-            : size.shortened == "Salmonn"
-            ? "🐟"
+          {size.shortened == "Lens"
+            ? "🔎"
+            : size.shortened == "Voice"
+            ? "🎙️"
             : "🤖"}{" "}
           <span className="hidden sm:inline-block">Converse com</span>{" "}
           <button
             className="py-2 font-semibold text-gray-500 hover:underline"
             onClick={() => setOpen(true)}
           >
-            {size.shortened == "Llava" || size.shortened == "Salmonn"
+            {size.shortened == "Lens" || size.shortened == "Voice"
               ? size.shortened
               : "Martin " + size.shortened}
           </button>
