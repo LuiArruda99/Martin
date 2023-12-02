@@ -87,9 +87,9 @@ export default function HomePage() {
   const [systemPrompt, setSystemPrompt] = useState(
     "You are a helpful assistant and always respond in Brazilian Portuguese. don't mention it, just pretend."
   );
-  const [temp, setTemp] = useState(0.75);
+  const [temp, setTemp] = useState(0.8);
   const [topP, setTopP] = useState(0.9);
-  const [maxTokens, setMaxTokens] = useState(800);
+  const [maxTokens, setMaxTokens] = useState(900);
 
   //  Lens params
   const [image, setImage] = useState(null);
