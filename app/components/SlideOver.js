@@ -166,7 +166,7 @@ export default function SlideOver({
                                 id="system-prompt-description"
                                 className="mt-2 text-xs text-gray-500"
                               >
-                                Descreva em sentenças simples as características e persolidade esperadas para ajudar a orientar
+                                Descreva em sentenças simples as características de personalidade esperadas para ajudar a orientar o
                                  comportamento do modelo.
                               </p>
                               <div className="mt-3">

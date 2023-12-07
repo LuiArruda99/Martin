@@ -15,22 +15,22 @@ function approximateTokenCount(text) {
 
 const VERSIONS = [
   {
-    name: "Martin 7B",
+    name: "Martin Nano",
     version: "13c3cdee13ee059ab779f0291d29054dab00a47dad8261375654de5540165fb0",
-    shortened: "7B",
+    shortened: "Nano",
   },
   {
-    name: "Martin 13B",
+    name: "Martin Pro",
     version: "f4e2de70d66816a838a89eeeb621910adffb0dd0baba3976c96980970978018d",
-    shortened: "13B",
+    shortened: "Pro",
   },
   {
-    name: "Martin 70B",
+    name: "Martin Ultra",
     version: "02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3",
-    shortened: "70B",
+    shortened: "Ultra",
   },
   {
-    name: "Martin Lens 13B",
+    name: "Martin Lens Pro",
     version: "2facb4a474a0462c15041b78b1ad70952ea46b5ec6ad29583c0b29dbd4249591",
     shortened: "Lens",
   },
@@ -83,7 +83,7 @@ export default function HomePage() {
   const [error, setError] = useState(null);
 
   //   Llama params
-  const [size, setSize] = useState(VERSIONS[1]); // default to 70B
+  const [size, setSize] = useState(VERSIONS[1]); // default to Ultra
   const [systemPrompt, setSystemPrompt] = useState(
     "You are a helpful assistant and always respond in Brazilian Portuguese. don't mention it, just pretend."
   );
@@ -201,7 +201,7 @@ export default function HomePage() {
   useEffect(() => {
     if (!localStorage.getItem("toastShown")) {
       toast.success(
-        "Acabamos de atualizar nosso modelo 7B – é super rápido. Experimente!"
+        "Acabamos de atualizar nosso modelo Nano – é super rápido. Experimente!"
       );
       localStorage.setItem("toastShown", "true");
     }
