@@ -21,7 +21,7 @@ const VERSIONS = [
   },
   {
     name: "Martin Pro",
-    version: "5a6809ca6288247d06daf6365557e5e429063f32a21146b2a807c682652136b8",
+    version: "f4e2de70d66816a838a89eeeb621910adffb0dd0baba3976c96980970978018d",
     shortened: "Pro",
   },
   {
