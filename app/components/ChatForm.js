@@ -33,7 +33,7 @@ const options = {
       base: "inter, -apple-system, blinkmacsystemfont, Segoe UI, helvetica, arial, sans-serif",
     },
     fontSizes: {
-      base: 16,
+      base: 20,
     },
   },
 };

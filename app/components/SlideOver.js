@@ -47,7 +47,7 @@ export default function SlideOver({
                     <div className="h-0 flex-1 overflow-y-auto">
                       <div className="bg-gray-700 px-4 py-6 sm:px-6">
                         <div className="flex items-center justify-between">
-                          <Dialog.Title className="text-base font-semibold leading-6 text-white">
+                          <Dialog.Title className="text-xl font-semibold leading-6 text-white">
                           🤖 Converse com Martin
                           </Dialog.Title>
                           <div className="ml-3 flex h-7 items-center">
